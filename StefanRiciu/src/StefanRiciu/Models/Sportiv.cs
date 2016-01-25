@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 namespace StefanRiciu.Models
@@ -9,7 +6,7 @@ namespace StefanRiciu.Models
     public class Sportiv
     {
         [ScaffoldColumn(false)]
-        public int ParticipantID { get; set; }
+        public int SportivID { get; set; }
 
         [Required]
         public string Nume { get; set; }
@@ -28,24 +25,29 @@ namespace StefanRiciu.Models
         public string Telefon { get; set; }
 
         [Required]
-        [Display(Name = "Data de naștere")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Data de naștere (zz-ll-aaaa)")]
         public DateTime DataDeNastere { get; set; }
 
         public Boolean Confirmat { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime DataInregistrare { get; set; }
 
         [Display(Name = "Observații")]
         public string Observatii { get; set; }
 
+        [ScaffoldColumn(false)]
         [Display(Name = "Categorie")]
         public int CategorieID { get; set; }
 
+        [ScaffoldColumn(false)]
         [Display(Name = "Traseu")]
         public int TraseuID { get; set; }
 
         // Navigation property
-        public virtual Categorie Categorii { get; set; }
-        public virtual Traseu Trasee { get; set; }
+        public virtual Categorie Categorie { get; set; }
+        public virtual Traseu Traseu { get; set; }
     }
 }

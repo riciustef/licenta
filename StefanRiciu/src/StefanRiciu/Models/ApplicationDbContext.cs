@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Data.Entity;
+using StefanRiciu.Models;
 
 namespace StefanRiciu.Models
 {
@@ -16,5 +17,11 @@ namespace StefanRiciu.Models
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+        public DbSet<Traseu> Traseu { get; set; }
+        public DbSet<Categorie> Categorie { get; set; }
+        public DbSet<Sportiv> Sportiv { get; set; }
+        public DbSet<Sponsor> Sponsor { get; set; }
+        public DbSet<Pagina> Pagina { get; set; }
+        public DbSet<SponsorType> SponsorType { get; set; }
     }
 }

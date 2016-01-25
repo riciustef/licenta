@@ -3,13 +3,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace StefanRiciu.Models
 {
-    public class Categorie
+    public class SponsorType
     {
-        public int CategorieID { get; set; }
+        [ScaffoldColumn(false)]
+        public int SponsorTypeID { get; set; }
 
         [Required]
         public string Nume { get; set; }
 
-        public virtual ICollection<Sportiv> Sportivi { get; set; }
+        public virtual ICollection<Sponsor> Sponsori { get; set; }
     }
 }

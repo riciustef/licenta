@@ -1,0 +1,82 @@
+@model StefanRiciu.Models.Sportiv
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Sportiv</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Club)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Club)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Confirmat)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Confirmat)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDeNastere)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataDeNastere)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataInregistrare)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataInregistrare)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Localitate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Localitate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nume)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nume)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Observatii)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Observatii)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Prenume)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Prenume)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>
