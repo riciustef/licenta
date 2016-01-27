@@ -6,6 +6,7 @@ using StefanRiciu.Models;
 
 namespace StefanRiciu.Controllers
 {
+    [RequireHttps]
     public class SportiviController : Controller
     {
         private ApplicationDbContext _context;

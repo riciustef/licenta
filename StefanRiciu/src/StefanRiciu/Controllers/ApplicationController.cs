@@ -4,6 +4,7 @@ using StefanRiciu.Models;
 
 namespace StefanRiciu.Controllers
 {
+    [RequireHttps]
     public abstract class ApplicationController : Controller
     {
         private ApplicationDbContext _context;

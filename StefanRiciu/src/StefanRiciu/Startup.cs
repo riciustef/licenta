@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using StefanRiciu.Models;
 using StefanRiciu.Services;
+using Microsoft.AspNet.Authorization;
+using Microsoft.AspNet.Mvc.Filters;
 
 namespace StefanRiciu
 {
@@ -59,6 +61,18 @@ namespace StefanRiciu
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+            // pentru https
+            services.Configure<AuthMessageSenderOptions>(Configuration);
+
+            //// allow authenticated users
+            //var defaultPolicy = new AuthorizationPolicyBuilder()
+            //    .RequireAuthenticatedUser()
+            //    .Build();
+
+            //services.AddMvc(setup => 
+            //{
+            //    setup.Filters.Add(new AuthorizeFilter(defaultPolicy));
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -6,6 +6,7 @@ using StefanRiciu.Models;
 
 namespace StefanRiciu.Controllers
 {
+    [RequireHttps]
     public class PaginiController : Controller
     {
         private ApplicationDbContext _context;
@@ -16,6 +17,7 @@ namespace StefanRiciu.Controllers
         }
 
         // GET: Pagini
+
         public IActionResult Index()
         {
             return View(_context.Pagina.ToList());

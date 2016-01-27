@@ -14,6 +14,7 @@ using StefanRiciu.ViewModels.Manage;
 namespace StefanRiciu.Controllers
 {
     [Authorize]
+    [RequireHttps]
     public class ManageController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;

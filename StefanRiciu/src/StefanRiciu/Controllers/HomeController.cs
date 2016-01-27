@@ -6,6 +6,7 @@ using Microsoft.AspNet.Mvc;
 
 namespace StefanRiciu.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         public IActionResult Index()

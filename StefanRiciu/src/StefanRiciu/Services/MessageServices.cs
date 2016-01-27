@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Mail;
+using SendGrid;
 
 namespace StefanRiciu.Services
 {
@@ -13,12 +16,45 @@ namespace StefanRiciu.Services
         public Task SendEmailAsync(string email, string subject, string message)
         {
             // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+
+            // Create the email object first, then add the properties.
+            var myMessage = new SendGridMessage();
+
+            myMessage.AddTo(email);
+            
+            // Add the message properties.
+            myMessage.From = new MailAddress("riciustef@gmail.com", "Ștefan Rîciu");
+            myMessage.Subject = subject;
+            myMessage.Text = message;
+            myMessage.Html = message;
+
+            var credentials = new NetworkCredential("azure_eb4b422357889b9c5ff845f2ad28d7de@azure.com", "fastest23");
+            
+            // Create a Web transport for sending email.
+            var transportWeb = new Web(credentials);
+            
+            // Send the email.
+            if (transportWeb != null)
+            {
+                return transportWeb.DeliverAsync(myMessage);
+            }
+            else
+            {
+                return Task.FromResult(0);
+            }
         }
 
         public Task SendSmsAsync(string number, string message)
         {
             // Plug in your SMS service here to send a text message.
+            var twilio = new Twilio.TwilioRestClient(
+            "AC1dd973cc6df8b1173f1307c1147bd7dd",           // Account Sid from dashboard
+            "a0d11fea01ce936f428e55776917bc2f");    // Auth Token
+
+            var result = twilio.SendMessage("+14695950494", number, message);
+            // Use the debug output for testing without receiving a SMS message.
+            // Remove the Debug.WriteLine(message) line after debugging.
+            // System.Diagnostics.Debug.WriteLine(message);
             return Task.FromResult(0);
         }
     }
