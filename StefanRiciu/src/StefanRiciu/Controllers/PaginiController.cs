@@ -3,10 +3,12 @@ using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.Rendering;
 using Microsoft.Data.Entity;
 using StefanRiciu.Models;
+using Microsoft.AspNet.Authorization;
 
 namespace StefanRiciu.Controllers
 {
     [RequireHttps]
+    [Authorize]
     public class PaginiController : Controller
     {
         private ApplicationDbContext _context;
@@ -24,6 +26,7 @@ namespace StefanRiciu.Controllers
         }
 
         // GET: Pagini/Details/5
+        [AllowAnonymous]
         public IActionResult Details(int? id)
         {
             if (id == null)

@@ -3,10 +3,12 @@ using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.Rendering;
 using Microsoft.Data.Entity;
 using StefanRiciu.Models;
+using Microsoft.AspNet.Authorization;
 
 namespace StefanRiciu.Controllers
 {
     [RequireHttps]
+    [Authorize]
     public class SponsorTypesController : Controller
     {
         private ApplicationDbContext _context;

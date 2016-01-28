@@ -1,10 +1,12 @@
 using System.Linq;
 using Microsoft.AspNet.Mvc;
 using StefanRiciu.Models;
+using Microsoft.AspNet.Authorization;
 
 namespace StefanRiciu.Controllers
 {
     [RequireHttps]
+    [Authorize]
     public class CategoriiController : Controller
     {
         private ApplicationDbContext _context;
