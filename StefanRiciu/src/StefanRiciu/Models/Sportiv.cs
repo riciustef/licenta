@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StefanRiciu.Models
 {
@@ -19,15 +21,18 @@ namespace StefanRiciu.Models
         public string Club { get; set; }
 
         [Required]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Required]
+        [DataType(DataType.PhoneNumber)]
         public string Telefon { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Data de naștere (zz-ll-aaaa)")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-mm-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Data de naștere (aaaa-ll-zz)")]
+
         public DateTime DataDeNastere { get; set; }
 
         public Boolean Confirmat { get; set; }

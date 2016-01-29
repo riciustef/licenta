@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Collections.Generic;
 using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.Rendering;
 using Microsoft.Data.Entity;
@@ -6,7 +7,7 @@ using StefanRiciu.Models;
 
 namespace StefanRiciu.Controllers
 {
-    [RequireHttps]
+    //[RequireHttps]
     public class SportiviController : Controller
     {
         private ApplicationDbContext _context;
@@ -43,8 +44,9 @@ namespace StefanRiciu.Controllers
         // GET: Sportivi/Create
         public IActionResult Create()
         {
-            ViewData["CategorieID"] = new SelectList(_context.Categorie, "CategorieID", "Categorie");
-            ViewData["TraseuID"] = new SelectList(_context.Traseu, "TraseuID", "Traseu");
+            PopulareCategoriiDropDownList();
+            PopulareTraseeDropDownList();
+
             return View();
         }
 
@@ -79,6 +81,8 @@ namespace StefanRiciu.Controllers
             }
             ViewData["CategorieID"] = new SelectList(_context.Categorie, "CategorieID", "Categorie", sportiv.CategorieID);
             ViewData["TraseuID"] = new SelectList(_context.Traseu, "TraseuID", "Traseu", sportiv.TraseuID);
+            PopulareCategoriiDropDownList(sportiv.CategorieID);
+            PopulareTraseeDropDownList(sportiv.TraseuID);
             return View(sportiv);
         }
 
@@ -125,6 +129,24 @@ namespace StefanRiciu.Controllers
             _context.Sportiv.Remove(sportiv);
             _context.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        // populare dropdown list categorii
+        private void PopulareCategoriiDropDownList(object selectedCategorie = null)
+        {
+            var categoriiQuery = from c in _context.Categorie
+                                 orderby c.Nume
+                                 select c;
+            ViewData["CategorieID"] = new SelectList(categoriiQuery, "CategorieID", "Nume", selectedCategorie);
+        }
+
+        // populare dropdown list trasee
+        private void PopulareTraseeDropDownList(object selectedTraseu = null)
+        {
+            var traseuQuery = from t in _context.Traseu
+                                 orderby t.Denumire
+                                 select t;
+            ViewData["TraseuID"] = new SelectList(traseuQuery, "TraseuID", "Denumire", selectedTraseu);
         }
     }
 }

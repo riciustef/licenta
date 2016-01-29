@@ -1,31 +1,30 @@
 @model StefanRiciu.Models.Sportiv
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Formular de inscriere";
 }
 
-<h2>Create</h2>
 
 <form asp-action="Create">
     <div class="form-horizontal">
-        <h4>Sportiv</h4>
-        <hr />
+
         <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+
         <div class="form-group">
-            <label asp-for="Club" class="col-md-2 control-label"></label>
+            <label asp-for="Nume" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="Club" class="form-control" />
-                <span asp-validation-for="Club" class="text-danger" />
+                <input asp-for="Nume" class="form-control" />
+                <span asp-validation-for="Nume" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <div class="checkbox">
-                    <input asp-for="Confirmat" />
-                    <label asp-for="Confirmat"></label>
-                </div>
+            <label asp-for="Prenume" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Prenume" class="form-control" />
+                <span asp-validation-for="Prenume" class="text-danger" />
             </div>
         </div>
+
         <div class="form-group">
             <label asp-for="DataDeNastere" class="col-md-2 control-label"></label>
             <div class="col-md-10">
@@ -33,17 +32,34 @@
                 <span asp-validation-for="DataDeNastere" class="text-danger" />
             </div>
         </div>
+
         <div class="form-group">
-            <label asp-for="DataInregistrare" class="col-md-2 control-label"></label>
+            <label asp-for="CategorieID" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="DataInregistrare" class="form-control" />
-                <span asp-validation-for="DataInregistrare" class="text-danger" />
+                <select asp-for="CategorieID" asp-items="ViewBag.CategorieID" class="form-control" ></select>
+                <span asp-validation-for="CategorieID" class="text-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="TraseuID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="TraseuID" asp-items="ViewBag.TraseuID" class="form-control"></select>
+                <span asp-validation-for="TraseuID" class="text-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Telefon" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Telefon" class="form-control" type="tel" />
+                <span asp-validation-for="Telefon" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
             <label asp-for="Email" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="Email" class="form-control" />
+                <input asp-for="Email" class="form-control" type="email" />
                 <span asp-validation-for="Email" class="text-danger" />
             </div>
         </div>
@@ -55,36 +71,23 @@
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="Nume" class="col-md-2 control-label"></label>
+            <label asp-for="Club" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="Nume" class="form-control" />
-                <span asp-validation-for="Nume" class="text-danger" />
+                <input asp-for="Club" class="form-control" />
+                <span asp-validation-for="Club" class="text-danger" />
             </div>
         </div>
+
         <div class="form-group">
             <label asp-for="Observatii" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="Observatii" class="form-control" />
+                <input asp-for="Observatii" class="form-control" type="text" />
                 <span asp-validation-for="Observatii" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="Prenume" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Prenume" class="form-control" />
-                <span asp-validation-for="Prenume" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Telefon" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Telefon" class="form-control" />
-                <span asp-validation-for="Telefon" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Trimite" class="btn btn-default" />
             </div>
         </div>
     </div>

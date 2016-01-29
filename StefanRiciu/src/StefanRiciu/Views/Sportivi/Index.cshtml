@@ -1,10 +1,8 @@
 @model IEnumerable<StefanRiciu.Models.Sportiv>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "List? participan?i";
 }
-
-<h2>Index</h2>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -12,69 +10,40 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Club)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Confirmat)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataDeNastere)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataInregistrare)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Localitate)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Nume)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Observatii)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Prenume)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Telefon)
+            @Html.DisplayNameFor(model => model.Localitate)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Club)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Confirmat)
+        </th>
+
         <th></th>
     </tr>
     
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Club)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Confirmat)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataDeNastere)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataInregistrare)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Localitate)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Nume)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Observatii)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Prenume)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Telefon)
+            @Html.DisplayFor(modelItem => item.Localitate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Club)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Confirmat)
         </td>
         <td>
             <a asp-action="Edit" asp-route-id="@item.SportivID">Edit</a> |

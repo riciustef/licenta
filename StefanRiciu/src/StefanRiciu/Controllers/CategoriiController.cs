@@ -5,7 +5,7 @@ using Microsoft.AspNet.Authorization;
 
 namespace StefanRiciu.Controllers
 {
-    [RequireHttps]
+    //[RequireHttps]
     [Authorize]
     public class CategoriiController : Controller
     {

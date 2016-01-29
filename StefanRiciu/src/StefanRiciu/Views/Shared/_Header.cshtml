@@ -1,31 +1,31 @@
-﻿@section scripts {
-    @*<script src="~/js/template/menu.js" type="text/javascript"></script>*@
-}
-
+﻿
 <div class="header">
     <div class="logo">
         <h1>
             <a asp-controller="Home" asp-action="Index">Alergare</a>
         </h1>
     </div>
+    @await Html.PartialAsync("_LoginPartial")
     <div class="h_menu">
         <a id="touch-menu" class="mobile-menu" href="#">Meniu</a>
         <nav>
             <ul class="menu list-unstyled">
                 <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Home" ? "activate" : "")"><a asp-controller="Home" asp-action="Index">Acasă</a></li>
-                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Pagini" ? "activate" : "")"><a asp-controller="Pagini" asp-action="Index">Pagini</a></li>
-                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Categorii" ? "activate" : "")"><a asp-controller="Categorii" asp-action="Index">Categorii</a></li>
-                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Sponsori" ? "activate" : "")"><a asp-controller="Sponsori" asp-action="Index">Sponsori</a></li>
-                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Sportivi" || ViewContext.RouteData.Values["Action"].ToString() == "Sportivi" ? "activate" : "")">
+                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Despre" ? "activate" : "")"><a asp-controller="Despre" asp-action="Index">Despre</a></li>
+                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Regulament" ? "activate" : "")"><a asp-controller="Regulament" asp-action="Index">Regulament</a></li>
+                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Traseu" ? "activate" : "")"><a asp-controller="Traseu" asp-action="Index">Traseu</a></li>
+                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "ListaParticipanti" || ViewContext.RouteData.Values["Action"].ToString() == "Inscriere" ? "activate" : "")">
                     <a href="#">Înscriere</a>
                     <ul class="sub-menu list-unstyled">
-                        <li><a asp-controller="Sportivi" asp-action="Index">Sportivi</a></li>
-                        <li><a asp-controller="Pagini" asp-action="Inscriere">Formular de înscriere</a></li>
+                        <li><a asp-controller="Sportivi" asp-action="Index">Lista de participanți</a></li>
+                        <li><a asp-controller="Sportivi" asp-action="Create">Formular de înscriere</a></li>
                     </ul>
                 </li>
-                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Trasee" ? "activate" : "")"><a asp-controller="Trasee" asp-action="Index">Trasee</a></li>
-                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Contact" ? "activate" : "")"><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "InfoUtile" ? "activate" : "")"><a asp-controller="InfoUtile" asp-action="Index">Info utile</a></li>
+                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Contact" ? "activate" : "")"><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+
             </ul>
+            
         </nav>
     </div>
     <div class="clearfix" />

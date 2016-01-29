@@ -16,7 +16,7 @@ using StefanRiciu.ViewModels.Account;
 namespace StefanRiciu.Controllers
 {
     [Authorize]
-    [RequireHttps]
+    //[RequireHttps]
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;

@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+
+@section scripts{
+
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+}
+<div class="contact">
+
+    <div class="map">
+        <iframe width="100%" height="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5425.185806778592!2d27.574202!3d47.165827!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cafb7abaa17af3%3A0x3f8d57cc747bf5b9!2sStrada+Petru+Rare%C8%99+6%2C+Ia%C8%99i%2C+Romania!5e0!3m2!1sen!2sro!4v1452446017730"></iframe>
+    </div>
+
+    <p class="style">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum vel arcu ac efficitur. Mauris efficitur purus a tellus fermentum varius. Sed sem nisi, suscipit vitae sapien a, rutrum posuere metus. Nulla luctus lorem vel tellus commodo scelerisque. Cras ut maximus nisi. Cras faucibus dolor purus, eget gravida elit molestie eu. Mauris a condimentum odio, porttitor commodo turpis. Morbi ligula enim, ornare vitae porttitor ut, vulputate eu lacus. Phasellus auctor velit sit amet auctor aliquet.</p>
+
+    <div class="contact_main">
+        <div class="col-md-4 company_ad">
+            <h2>Date legale</h2>
+            <address>
+                <p>Asociația Mai Bine</p>
+                <p>Str. Petru Rareș nr. 6, Iași</p>
+                <p>700126, România</p>
+                <p><abbr title="Telefon">T:</abbr> 555 123 456</p>
+                <p><abbr title="Website">W:</abbr> <a href="http://www.maibine.eu">www.maibine.eu</a></p>
+                <p><abbr title="Email">E:</abbr> <a href="mailto:contact@maibine.eu">contact@maibine.eu</a></p>
+                <p><abbr title="Facebook">F:</abbr> <a href="https://www.facebook.com/mai.bine">mai.bine</a></p>
+            </address>
+        </div>
+        <div class="col-md-4 company_ad">
+            <h2>Persoane de contact</h2>
+            <address>
+                <p>Anca Elena Gheorghică</p>
+                <p><abbr title="Telefon">T:</abbr> 555 123 456 (sponsorizare, parteneriate)</p>
+                <p>Ludovic Vieru</p>
+                <p><abbr title="Telefon">T:</abbr> 555 123 456 (traseu, regulament)</p>
+                <p>Daniel Moroi</p>
+                <p><abbr title="Telefon">T:</abbr> 555 123 456 (înscrieri, logistică)</p>
+            </address>
+        </div>
+        <div class="col-md-4">
+            <div class="contact-form">
+                <h2>Sugestii</h2>
+                <div class="fb-comments" data-href="https://www.facebook.com/iasiintrail/" data-width="350" data-numposts="5"></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
