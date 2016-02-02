@@ -30,7 +30,7 @@ namespace StefanRiciu.Models
 
         [Required]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-mm-dd}", ApplyFormatInEditMode = true)]
+        //[DisplayFormat(DataFormatString = "{0:yyyy-mm-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Data de naștere (aaaa-ll-zz)")]
 
         public DateTime DataDeNastere { get; set; }

@@ -1,9 +1,13 @@
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.Rendering;
+using Microsoft.AspNet.Authorization;
 using Microsoft.Data.Entity;
+using System.Threading.Tasks;
 using StefanRiciu.Models;
+using StefanRiciu.Services;
 
 namespace StefanRiciu.Controllers
 {
@@ -11,10 +15,11 @@ namespace StefanRiciu.Controllers
     public class SportiviController : Controller
     {
         private ApplicationDbContext _context;
+        private readonly IEmailSender _emailSender;
 
         public SportiviController(ApplicationDbContext context)
         {
-            _context = context;    
+            _context = context;
         }
 
         // GET: Sportivi
@@ -52,13 +57,21 @@ namespace StefanRiciu.Controllers
 
         // POST: Sportivi/Create
         [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Sportiv sportiv)
         {
             if (ModelState.IsValid)
             {
+                
+                sportiv.DataInregistrare = DateTime.Now;
                 _context.Sportiv.Add(sportiv);
                 _context.SaveChanges();
+                //var emailSubject = "Inscriere concurs";
+                //var emailContent = "Va multumim pentru inscrierea la concurs.";
+                // _emailSender.SendEmailAsync("riciustef@gmail.com", emailSubject, "Un nou concurent inscris la concurs.");
+                //_emailSender.SendEmailAsync(sportiv.Email, emailSubject, emailContent);
+
                 return RedirectToAction("Index");
             }
             ViewData["CategorieID"] = new SelectList(_context.Categorie, "CategorieID", "Categorie", sportiv.CategorieID);
@@ -144,8 +157,8 @@ namespace StefanRiciu.Controllers
         private void PopulareTraseeDropDownList(object selectedTraseu = null)
         {
             var traseuQuery = from t in _context.Traseu
-                                 orderby t.Denumire
-                                 select t;
+                              orderby t.Denumire
+                              select t;
             ViewData["TraseuID"] = new SelectList(traseuQuery, "TraseuID", "Denumire", selectedTraseu);
         }
     }
