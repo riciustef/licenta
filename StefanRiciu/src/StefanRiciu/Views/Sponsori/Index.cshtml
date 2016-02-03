@@ -12,16 +12,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.DataInregistrare)
+            @Html.DisplayNameFor(model => model.Nume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.URL)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Logo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Nume)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.URL)
+            @Html.DisplayNameFor(model => model.DataInregistrare)
         </th>
         <th></th>
     </tr>
@@ -29,16 +29,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.DataInregistrare)
+            @Html.DisplayFor(modelItem => item.Nume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.URL)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Logo)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Nume)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.URL)
+            @Html.DisplayFor(modelItem => item.DataInregistrare)
         </td>
         <td>
             <a asp-action="Edit" asp-route-id="@item.SponsorID">Edit</a> |

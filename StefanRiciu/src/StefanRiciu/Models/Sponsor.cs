@@ -18,6 +18,7 @@ namespace StefanRiciu.Models
         public string URL { get; set; }
 
         [ScaffoldColumn(false)]
+        [Display(Name = "Tip de sponsor")]
         public int SponsorTypeID { get; set; }
         
         [DataType(DataType.Date)]

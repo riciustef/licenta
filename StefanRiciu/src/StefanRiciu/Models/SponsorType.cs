@@ -5,7 +5,6 @@ namespace StefanRiciu.Models
 {
     public class SponsorType
     {
-        [ScaffoldColumn(false)]
         public int SponsorTypeID { get; set; }
 
         [Required]

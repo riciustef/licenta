@@ -12,17 +12,10 @@
         <hr />
         <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="DataInregistrare" class="col-md-2 control-label"></label>
+            <label asp-for="SponsorTypeID" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="DataInregistrare" class="form-control" />
-                <span asp-validation-for="DataInregistrare" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Logo" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Logo" class="form-control" />
-                <span asp-validation-for="Logo" class="text-danger" />
+                <select asp-for="SponsorTypeID" asp-items="ViewBag.SponsorTypeID" class="form-control"></select>
+                <span asp-validation-for="SponsorTypeID" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
@@ -37,6 +30,13 @@
             <div class="col-md-10">
                 <input asp-for="URL" class="form-control" />
                 <span asp-validation-for="URL" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Logo" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Logo" class="form-control" />
+                <span asp-validation-for="Logo" class="text-danger" />
             </div>
         </div>
         <div class="form-group">

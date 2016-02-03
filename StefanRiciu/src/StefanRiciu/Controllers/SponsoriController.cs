@@ -4,6 +4,7 @@ using Microsoft.AspNet.Mvc.Rendering;
 using Microsoft.Data.Entity;
 using StefanRiciu.Models;
 using Microsoft.AspNet.Authorization;
+using System;
 
 namespace StefanRiciu.Controllers
 {
@@ -34,6 +35,7 @@ namespace StefanRiciu.Controllers
             }
 
             Sponsor sponsor = _context.Sponsor.Single(m => m.SponsorID == id);
+            PopulareSponsorTypesDropDownList();
             if (sponsor == null)
             {
                 return HttpNotFound();
@@ -45,7 +47,8 @@ namespace StefanRiciu.Controllers
         // GET: Sponsori/Create
         public IActionResult Create()
         {
-            ViewData["SponsorTypeID"] = new SelectList(_context.Set<SponsorType>(), "SponsorTypeID", "SponsorType");
+            //ViewData["SponsorTypeID"] = new SelectList(_context.Set<SponsorType>(), "SponsorTypeID", "SponsorType");
+            PopulareSponsorTypesDropDownList();
             return View();
         }
 
@@ -56,6 +59,7 @@ namespace StefanRiciu.Controllers
         {
             if (ModelState.IsValid)
             {
+                sponsor.DataInregistrare = DateTime.Now;
                 _context.Sponsor.Add(sponsor);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
@@ -78,6 +82,7 @@ namespace StefanRiciu.Controllers
                 return HttpNotFound();
             }
             ViewData["SponsorTypeID"] = new SelectList(_context.Set<SponsorType>(), "SponsorTypeID", "SponsorType", sponsor.SponsorTypeID);
+            PopulareSponsorTypesDropDownList();
             return View(sponsor);
         }
 
@@ -123,6 +128,15 @@ namespace StefanRiciu.Controllers
             _context.Sponsor.Remove(sponsor);
             _context.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        // populare dropdown list trasee
+        private void PopulareSponsorTypesDropDownList(object selectedSponsorType = null)
+        {
+            var sponsorTypeQuery = from st in _context.SponsorType
+                              orderby st.Nume
+                              select st;
+            ViewData["SponsorTypeID"] = new SelectList(sponsorTypeQuery, "SponsorTypeID", "Nume", selectedSponsorType);
         }
     }
 }
