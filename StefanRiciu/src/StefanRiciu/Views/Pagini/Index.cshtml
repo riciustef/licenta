@@ -12,25 +12,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Activa)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Continut)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataInregistrare)
+            @Html.DisplayNameFor(model => model.Titlu)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Descriere)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Imagine)
+            @Html.DisplayNameFor(model => model.DataInregistrare)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Titlu)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Video)
+            @Html.DisplayNameFor(model => model.Activa)
         </th>
         <th></th>
     </tr>
@@ -38,25 +29,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Activa)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Continut)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataInregistrare)
+            @Html.DisplayFor(modelItem => item.Titlu)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Descriere)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Imagine)
+            @Html.DisplayFor(modelItem => item.DataInregistrare)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Titlu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Video)
+            @Html.DisplayFor(modelItem => item.Activa)
         </td>
         <td>
             <a asp-action="Edit" asp-route-id="@item.PaginaID">Edit</a> |

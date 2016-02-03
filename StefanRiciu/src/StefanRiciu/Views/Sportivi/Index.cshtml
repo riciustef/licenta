@@ -1,55 +1,69 @@
 @model IEnumerable<StefanRiciu.Models.Sportiv>
 
 @{
-    ViewData["Title"] = "List? participan?i";
+    ViewData["Title"] = "Lista participanti";
 }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nume)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Prenume)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Localitate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Club)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Confirmat)
-        </th>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prenume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Localitate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Club)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Confirmat)
+            </th>
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("Admin"))
+                {
 
-        <th></th>
-    </tr>
-    
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nume)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Prenume)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Localitate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Club)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Confirmat)
-        </td>
-        <td>
-            <a asp-action="Edit" asp-route-id="@item.SportivID">Edit</a> |
-            <a asp-action="Details" asp-route-id="@item.SportivID">Details</a> |
-            <a asp-action="Delete" asp-route-id="@item.SportivID">Delete</a>
-        </td>
-    </tr>
-}
-</table>
+                    <th></th>
+                }
+            }
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr >
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prenume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Localitate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Club)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Confirmat)
+                </td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    if (User.IsInRole("Admin"))
+                    {
+
+
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.SportivID">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.SportivID">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.SportivID">Delete</a>
+                        </td>
+                    }
+                }
+            </tr>
+        }
+    </table>
+</div>

@@ -12,10 +12,11 @@ using StefanRiciu.Services;
 namespace StefanRiciu.Controllers
 {
     //[RequireHttps]
+    [Authorize]
     public class SportiviController : Controller
     {
         private ApplicationDbContext _context;
-        private readonly IEmailSender _emailSender;
+        //private readonly IEmailSender _emailSender;
 
         public SportiviController(ApplicationDbContext context)
         {
@@ -23,6 +24,7 @@ namespace StefanRiciu.Controllers
         }
 
         // GET: Sportivi
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var applicationDbContext = _context.Sportiv.Include(s => s.Categorie).Include(s => s.Traseu);
@@ -38,6 +40,10 @@ namespace StefanRiciu.Controllers
             }
 
             Sportiv sportiv = _context.Sportiv.Single(m => m.SportivID == id);
+
+            PopulareCategoriiDropDownList();
+            PopulareTraseeDropDownList();
+
             if (sportiv == null)
             {
                 return HttpNotFound();
@@ -47,6 +53,7 @@ namespace StefanRiciu.Controllers
         }
 
         // GET: Sportivi/Create
+        [AllowAnonymous]
         public IActionResult Create()
         {
             PopulareCategoriiDropDownList();
@@ -80,6 +87,7 @@ namespace StefanRiciu.Controllers
         }
 
         // GET: Sportivi/Edit/5
+        
         public IActionResult Edit(int? id)
         {
             if (id == null)

@@ -18,12 +18,13 @@ namespace StefanRiciu.Models
         [Display(Name = "Conținut")]
         public string Continut { get; set; }
 
-        public string Imagine { get; set; }
-        public string Video { get; set; }
+        //public string Imagine { get; set; }
+        //public string Video { get; set; }
 
         public Boolean Activa { get; set; }
 
         [DataType(DataType.Date)]
+        [Display(Name = "Data Inregistrare")]
         public DateTime DataInregistrare { get; set; }
     }
 }

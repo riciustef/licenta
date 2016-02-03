@@ -116,7 +116,26 @@
                 paginationNumbers: false,
             });
 
+
+
+            switch ($(location).attr('pathname')) {
+                case "/Pagini/Details/2":
+                    $("li#info").addClass("activate"); break;
+                case "/Pagini/Details/3":
+                    $("li#contact").addClass("activate"); break;
+                case "/Pagini/Details/4":
+                    $("li#despre").addClass("activate"); break;
+                case "/Pagini/Details/5":
+                    $("li#regulament").addClass("activate"); break;
+                case "/Pagini/Details/6":
+                    $("li#traseu").addClass("activate"); break;
+                default:
+                    break;
+            }
+
+
         });
+           
     </script>
 
     @RenderSection("scripts", required: false)

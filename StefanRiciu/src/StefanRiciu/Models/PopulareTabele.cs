@@ -207,8 +207,8 @@ namespace StefanRiciu.Models
                         Titlu = "Regulament",
                         Descriere = "Regulamentul concursului pentru ediția din anul 2016",
                         Continut = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                        Imagine = null,
-                        Video = null,
+                        //Imagine = null,
+                        //Video = null,
                         Activa = true,
                         DataInregistrare = DateTime.Parse("2016-01-01")
                     },
@@ -217,8 +217,8 @@ namespace StefanRiciu.Models
                         Titlu = "Despre",
                         Descriere = "Despre concursul ediția din anul 2016",
                         Continut = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                        Imagine = null,
-                        Video = null,
+                        //Imagine = null,
+                        //Video = null,
                         Activa = true,
                         DataInregistrare = DateTime.Parse("2016-01-01")
                     },
@@ -227,8 +227,8 @@ namespace StefanRiciu.Models
                         Titlu = "Info Utile",
                         Descriere = "Informații utile participanților pentru ediția din anul 2016",
                         Continut = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                        Imagine = null,
-                        Video = null,
+                        //Imagine = null,
+                        //Video = null,
                         Activa = true,
                         DataInregistrare = DateTime.Parse("2016-01-01")
                     },
@@ -237,8 +237,8 @@ namespace StefanRiciu.Models
                         Titlu = "Contact",
                         Descriere = "Pentru mai multe informații",
                         Continut = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                        Imagine = null,
-                        Video = null,
+                        //Imagine = null,
+                        //Video = null,
                         Activa = true,
                         DataInregistrare = DateTime.Parse("2016-01-01")
                     },
@@ -247,8 +247,8 @@ namespace StefanRiciu.Models
                         Titlu = "Traseu",
                         Descriere = "Despre trasee",
                         Continut = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                        Imagine = null,
-                        Video = null,
+                        //Imagine = null,
+                        //Video = null,
                         Activa = true,
                         DataInregistrare = DateTime.Parse("2016-01-01")
                     }

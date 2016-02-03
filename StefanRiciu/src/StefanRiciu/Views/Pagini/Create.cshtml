@@ -12,25 +12,10 @@
         <hr />
         <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <div class="checkbox">
-                    <input asp-for="Activa" />
-                    <label asp-for="Activa"></label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Continut" class="col-md-2 control-label"></label>
+            <label asp-for="Titlu" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="Continut" class="form-control" />
-                <span asp-validation-for="Continut" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="DataInregistrare" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="DataInregistrare" class="form-control" />
-                <span asp-validation-for="DataInregistrare" class="text-danger" />
+                <input asp-for="Titlu" class="form-control" />
+                <span asp-validation-for="Titlu" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
@@ -41,6 +26,13 @@
             </div>
         </div>
         <div class="form-group">
+            <label asp-for="Continut" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Continut" class="form-control" />
+                <span asp-validation-for="Continut" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
             <label asp-for="Imagine" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="Imagine" class="form-control" />
@@ -48,17 +40,18 @@
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="Titlu" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Titlu" class="form-control" />
-                <span asp-validation-for="Titlu" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
             <label asp-for="Video" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="Video" class="form-control" />
                 <span asp-validation-for="Video" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="Activa" />
+                    <label asp-for="Activa"></label>
+                </div>
             </div>
         </div>
         <div class="form-group">

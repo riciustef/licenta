@@ -32,13 +32,35 @@
             <div class="soc_icons pull-right">
                 <p class="link">
                     <ul class="list-unstyled text-center">
-                        <li><a class="footer-link" asp-controller="Home" asp-action="Index">Acasă</a></li>
-                        <li><a class="footer-link" asp-controller="Despre" asp-action="Index">Despre</a></li>
-                        <li><a class="footer-link" asp-controller="Regulament" asp-action="Index">Regulament</a></li>
-                        <li><a class="footer-link" asp-controller="Traseu" asp-action="Index">Traseu</a></li>
-                        <li><a class="footer-link" asp-controller="Home" asp-action="Inscriere">Înscriere</a></li>
-                        <li><a class="footer-link" asp-controller="InfoUtile" asp-action="Index">Info utile</a></li>
-                        <li><a class="footer-link" asp-controller="Contact" asp-action="Index">Contact</a></li>
+                        <li>
+                            <a class="footer-link" asp-controller="Home" asp-action="Index">Acasă</a>
+                        </li>
+                        <li>
+                            @*<a class="footer-link" asp-controller="Despre" asp-action="Index">Despre</a>*@
+                            @Html.ActionLink("Despre", "Details", "Pagini", new { id = 4 }, new { @class = "footer-link" })
+                        </li>
+                        <li>
+                            @*<a class="footer-link" asp-controller="Regulament" asp-action="Index">Regulament</a>*@
+                            @Html.ActionLink("Regulament", "Details", "Pagini", new { id = 5 }, new { @class = "footer-link" })
+                        </li>
+                        <li>
+                            @*<a class="footer-link" asp-controller="Traseu" asp-action="Index">Traseu</a>*@
+                            @Html.ActionLink("Traseu", "Details", "Pagini", new { id = 6 }, new { @class = "footer-link" })
+                        </li>
+                        <li>
+                            <a class="footer-link" asp-controller="Sportivi" asp-action="Index">Listă înscriși</a>
+                        </li>
+                        <li>
+                            <a class="footer-link" asp-controller="Sportivi" asp-action="Create">Formular de înscriere</a>
+                        </li>
+                        <li>
+                            @*<a class="footer-link" asp-controller="InfoUtile" asp-action="Index">Info utile</a>*@
+                            @Html.ActionLink("Info utile", "Details", "Pagini", new { id = 2 }, new { @class = "footer-link" })
+                        </li>
+                        <li>
+                            @*<a class="footer-link" asp-controller="Contact" asp-action="Index">Contact</a>*@
+                            @Html.ActionLink("Contact", "Details", "Pagini", new { id = 3 }, new { @class = "footer-link" })
+                        </li>
                     </ul>
                 </p>
             </div>

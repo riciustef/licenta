@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.Rendering;
@@ -35,7 +36,7 @@ namespace StefanRiciu.Controllers
             }
 
             Pagina pagina = _context.Pagina.Single(m => m.PaginaID == id);
-            if (pagina == null)
+            if (pagina == null || !pagina.Activa)
             {
                 return HttpNotFound();
             }
@@ -56,6 +57,7 @@ namespace StefanRiciu.Controllers
         {
             if (ModelState.IsValid)
             {
+                pagina.DataInregistrare = DateTime.Now;
                 _context.Pagina.Add(pagina);
                 _context.SaveChanges();
                 return RedirectToAction("Index");

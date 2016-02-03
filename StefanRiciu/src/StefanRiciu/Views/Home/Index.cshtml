@@ -65,7 +65,8 @@
             <p>Este o competiție de alergare a cărei primă ediție se va desfășura în data de 10.04.2016 pe Dealul Repedea, la 10km sud de Municipiul Iaşi.</p>
         </div>
         <div class="col-md-3 span1_of_2">
-            <a asp-controller="Despre" asp-action="Index" class="btn btn1">Mai mult</a>
+            @*<a asp-controller="Despre" asp-action="Index" class="btn btn1">Mai mult</a>*@
+            @Html.ActionLink("Mai mult", "Details", "Pagini", new { id = 4 }, new {  @class = "btn btn1" })
         </div>
         <div class="clearfix"></div>
     </div>
@@ -77,7 +78,8 @@
                 <h3>Regulament</h3>
                 <p>Citește cu atenție regulamentul înainte de a te înscrie în concurs!</p>
                 <div class="read_more">
-                    <a asp-controller="Regulament" asp-action="Index" class="btn btn-2b">Mai mult</a>
+                    @*<a asp-controller="Regulament" asp-action="Index" class="btn btn-2b">Mai mult</a>*@
+                    @Html.ActionLink("Mai mult", "Details", "Pagini", new { id = 5 }, new { @class = "btn btn-2b" })
                 </div>
             </div>
         </div>
@@ -87,7 +89,8 @@
                 <h3>Trasee</h3>
                 <p>Cele două trasee sunt integral fără asfalt.</p>
                 <div class="read_more">
-                    <a asp-controller="Traseu" asp-action="Index" class="btn btn-2b">Mai mult</a>
+                    @*<a asp-controller="Traseu" asp-action="Index" class="btn btn-2b">Mai mult</a>*@
+                    @Html.ActionLink("Mai mult", "Details", "Pagini", new { id = 6 }, new { @class = "btn btn-2b" })
                 </div>
             </div>
         </div>
@@ -97,7 +100,7 @@
                 <h3>Înscriere</h3>
                 <p>Alege traseul care ți se potrivește cel mai bine.</p>
                 <div class="read_more">
-                    <a asp-controller="Home" asp-action="Inscriere" class="btn btn-2b">Mai mult</a>
+                    <a asp-controller="Sportivi" asp-action="Create" class="btn btn-2b">Mai mult</a>
                 </div>
             </div>
         </div>
@@ -107,7 +110,8 @@
                 <h3>Info utile</h3>
                 <p>Program, cazare și cum ajungi la punctul de start.</p>
                 <div class="read_more">
-                    <a asp-controller="InfoUtile" asp-action="" class="btn btn-2b">Mai mult</a>
+                    @*<a asp-controller="InfoUtile" asp-action="" class="btn btn-2b">Mai mult</a>*@
+                    @Html.ActionLink("Mai mult", "Details", "Pagini", new { id = 2 }, new { @class = "btn btn-2b" })
                 </div>
             </div>
         </div>
